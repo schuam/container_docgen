@@ -1,19 +1,28 @@
 FROM ubuntu:22.04
 
+COPY texlive.profile /tmp/
+
+ENV PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
+
 RUN apt-get update \
     && apt-get upgrade \
-    && apt-get install -y wget unzip make
+    && apt-get install -y wget perl tar
 
-RUN apt-get install -y texlive-latex-base texlive-fonts-recommended
-
-RUN wget http://mirror.ctan.org/install/macros/latex/contrib/koma-script.tds.zip \
-    && wget http://mirror.ctan.org/install/macros/latex/contrib/csquotes.tds.zip \
-    && wget http://mirror.ctan.org/install/macros/latex/contrib/etoolbox.tds.zip \
-    && wget http://mirror.ctan.org/install/macros/latex/contrib/enumitem.tds.zip \
-    && unzip koma-script.tds.zip -d /usr/local/share/texmf/ \
-    && unzip csquotes.tds.zip -d /usr/local/share/texmf/ \
-    && unzip etoolbox.tds.zip -d /usr/local/share/texmf/ \
-    && unzip enumitem.tds.zip -d /usr/local/share/texmf/ \
-    && rm koma-script.tds.zip csquotes.tds.zip etoolbox.tds.zip enumitem.tds.zip \
-    && texhash
-
+RUN wget ftp://tug.org/historic/systems/texlive/2022/tlnet-final/install-tl-unx.tar.gz \
+    && mkdir /tmp/install-tl \
+    && tar -xzf install-tl-unx.tar.gz -C /tmp/install-tl --strip-components=1 \
+    && /tmp/install-tl/install-tl \
+        --profile=/tmp/texlive.profile \
+        --repository=ftp://tug.org/historic/systems/texlive/2022/tlnet-final \
+    && tlmgr update --self \
+    && tlmgr install \
+        babel-german \
+        biber \
+        biblatex \
+        collection-fontsrecommended \
+        collection-latex \
+        csquotes \
+        enumitem \
+        etoolbox \
+        koma-script \
+        lastpage
