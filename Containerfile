@@ -32,4 +32,5 @@ RUN apt-get update \
         enumitem \
         etoolbox \
         koma-script \
-        lastpage
+        lastpage \
+        paralist
