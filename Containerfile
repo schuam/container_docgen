@@ -34,4 +34,5 @@ RUN apt-get update \
         etoolbox \
         koma-script \
         lastpage \
-        paralist
+        paralist \
+        setspace
