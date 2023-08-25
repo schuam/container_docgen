@@ -7,7 +7,6 @@ COPY texlive.profile /tmp/
 ENV PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
 
 RUN apt-get update \
-    && apt-get upgrade \
 # Install some needed packages.
     && apt-get install -y \
         pandoc \
