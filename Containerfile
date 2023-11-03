@@ -36,4 +36,7 @@ RUN apt-get update \
         koma-script \
         lastpage \
         paralist \
-        setspace
+        setspace \
+# Clean up a little bit
+    && rm -r /install-tl-unx.tar.gz /tmp
+
