@@ -38,7 +38,7 @@ RUN apt-get update \
         paralist \
         setspace \
 # Clean up a little bit
-    && rm -r /install-tl-unx.tar.gz /tmp
+    && rm -r /install-tl-unx.tar.gz /tmp/*
 
 VOLUME [ "/data" ]
 WORKDIR /data
