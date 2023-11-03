@@ -34,6 +34,6 @@ image:
 	podman build \
 		--build-arg TL_YEAR=$(TL_YEAR) \
 		-t schuam/docgen:latest \
-		-t schuam/docgen:`git describe --tags` \
+		-t schuam/docgen:`git describe --tags --dirty` \
 		.
 
