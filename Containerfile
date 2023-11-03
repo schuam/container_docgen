@@ -12,6 +12,7 @@ RUN apt-get update \
         make \
         pandoc \
         perl \
+        plantuml \
         tar \
         wget \
 # Install lexlive from tug.org.
