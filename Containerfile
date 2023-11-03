@@ -40,3 +40,6 @@ RUN apt-get update \
 # Clean up a little bit
     && rm -r /install-tl-unx.tar.gz /tmp
 
+VOLUME [ "/data" ]
+WORKDIR /data
+
