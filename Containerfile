@@ -9,6 +9,7 @@ ENV PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
 RUN apt-get update \
 # Install some needed packages.
     && apt-get install -y \
+        cmake \
         make \
         pandoc \
         perl \
