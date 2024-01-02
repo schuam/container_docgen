@@ -5,6 +5,7 @@ ARG TL_YEAR=2022
 COPY texlive.profile /tmp/
 
 ENV PATH="/usr/local/texlive/${TL_YEAR}/bin/x86_64-linux:$PATH"
+ENV XDG_TEMPLATES_DIR="/templates"
 
 # Install some needed packages.
 RUN apt-get update \
@@ -45,6 +46,6 @@ RUN wget ftp://tug.org/historic/systems/texlive/${TL_YEAR}/tlnet-final/install-t
 # Clean up a little bit
     && rm -r /install-tl-unx.tar.gz /tmp/*
 
-VOLUME [ "/workdir" ]
+VOLUME [ "/workdir", "${XDG_TEMPLATES_DIR}" ]
 WORKDIR /workdir
 
