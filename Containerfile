@@ -4,7 +4,7 @@ ARG TL_YEAR=2022
 
 COPY texlive.profile /tmp/
 
-ENV PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
+ENV PATH="/usr/local/texlive/${TL_YEAR}/bin/x86_64-linux:$PATH"
 
 # Install some needed packages.
 RUN apt-get update \
