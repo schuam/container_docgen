@@ -6,8 +6,8 @@ COPY texlive.profile /tmp/
 
 ENV PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
 
-RUN apt-get update \
 # Install some needed packages.
+RUN apt-get update \
     && apt-get install -y \
         cmake \
         make \
@@ -15,9 +15,10 @@ RUN apt-get update \
         perl \
         plantuml \
         tar \
-        wget \
+        wget
+
 # Install lexlive from tug.org.
-    && wget ftp://tug.org/historic/systems/texlive/${TL_YEAR}/tlnet-final/install-tl-unx.tar.gz \
+RUN wget ftp://tug.org/historic/systems/texlive/${TL_YEAR}/tlnet-final/install-tl-unx.tar.gz \
     && mkdir /tmp/install-tl \
     && tar -xzf install-tl-unx.tar.gz -C /tmp/install-tl --strip-components=1 \
     && /tmp/install-tl/install-tl \
