@@ -15,7 +15,10 @@ RUN apt-get update \
         perl \
         plantuml \
         tar \
-        wget
+        wget \
+    && apt-get clean \
+    && rm -Rf /var/lib/apt/lists/* \
+    && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
 
 # Install lexlive from tug.org.
 RUN wget ftp://tug.org/historic/systems/texlive/${TL_YEAR}/tlnet-final/install-tl-unx.tar.gz \
