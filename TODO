@@ -1,0 +1,5 @@
+# TODOs
+
+- Replace the year in texlive.profile with placeholders and replace the
+  placeholders after copying the file to the image (using a RUN command).
+
