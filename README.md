@@ -5,7 +5,7 @@ the official Ubuntu 22.04 image. Additionally some packages that are useful
 when generating documents are installed, e.g.:
 
 - cmake
-- makce
+- make
 - pandoc
 - plantuml
 
