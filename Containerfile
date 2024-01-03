@@ -34,6 +34,7 @@ RUN wget ftp://tug.org/historic/systems/texlive/${TL_YEAR}/tlnet-final/install-t
         babel-german \
         biber \
         biblatex \
+        booktabs \
         collection-fontsrecommended \
         collection-latex \
         csquotes \
@@ -41,6 +42,8 @@ RUN wget ftp://tug.org/historic/systems/texlive/${TL_YEAR}/tlnet-final/install-t
         etoolbox \
         koma-script \
         lastpage \
+# mdwtools for example needed for footnote.sty
+        mdwtools \
         paralist \
         setspace \
 # Clean up a little bit
