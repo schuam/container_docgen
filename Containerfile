@@ -11,6 +11,7 @@ ENV XDG_TEMPLATES_DIR="/templates"
 RUN apt-get update \
     && apt-get install -y \
         cmake \
+        graphviz \
         make \
         pandoc \
         perl \
